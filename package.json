@@ -1,0 +1,19 @@
+{
+  "name": "gocardless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js --help"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "gocardless-nodejs": "^1.4.1",
+    "uuid": "^7.0.3",
+    "yargs": "^16.1.1"
+  }
+}

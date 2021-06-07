@@ -40,7 +40,14 @@ const listPayments = () => {
     const client = getClient()
 
     client.payments.list({
-        limit: 5,
+        
+        created_at: {
+            gt: "2021-02-09T17:01:06.000Z"
+        
+        },
+        
+           
+        
     }).then(result => {
         result.payments.forEach((payment) => {
             console.log(chalk.green.inverse(payment.id))
@@ -53,7 +60,7 @@ const listPayments = () => {
 // Create createCustomer Function
 const createCustomer = () => {
     const client = getClient()
-
+//
     client.customers.create(
         {
             email: 'none@example.com',
@@ -73,14 +80,18 @@ const createCustomer = () => {
 }
 
 // Create createCustomerBankAccount Function
-const createCustomerBankAccount = (customer) => {
+// TASK - delete IBAN extend function to take IBAN in args 
+// node app.js createCustomerBankAccount --iban=FR1420041010050500013M02606 --account_holder_name=john --country_code=FR --customer=CU000G079CCZZZ
+// create bank account without ibans e.g GB account
+
+const createCustomerBankAccount = (customer, iban, account_holder_name, country_code) => {
     const client = getClient()
 
     client.customerBankAccounts.create(
         {
-            iban: 'FR1420041010050500013M02606',
-            account_holder_name: 'MR S NODE',
-            country_code: 'FR',
+            iban,
+            account_holder_name,
+            country_code,
             links: {
                 customer
             }
@@ -92,6 +103,7 @@ const createCustomerBankAccount = (customer) => {
     })
 
 }
+
 
 // Create createMandate Function
 const createMandate = (bankAccount) => {
@@ -122,7 +134,7 @@ const getClient = () => {
     )
 }
 
-// Create Exports
+// Create Exports DECLARE FUNCTIONS
 module.exports = {
     getPayment: getPayment,
     createPayment: createPayment,

@@ -80,9 +80,7 @@ const createCustomer = () => {
 }
 
 // Create createCustomerBankAccount Function
-// TASK - delete IBAN extend function to take IBAN in args 
-// node app.js createCustomerBankAccount --iban=FR1420041010050500013M02606 --account_holder_name=john --country_code=FR --customer=CU000G079CCZZZ
-// create bank account without ibans e.g GB account
+
 
 const createCustomerBankAccount = (customer, iban, account_holder_name, country_code) => {
     const client = getClient()

@@ -7,7 +7,7 @@ A simple command line tool to make API requests to the GoCardless platform using
 Clone the GitHub project using:
 
 ```bash
-git clone https://github.com/s1xro/gocardless-node-tool.git
+git clone https://github.com/simondotws/gocardless-node-tool.git
 ```
 
 Run npm install:
